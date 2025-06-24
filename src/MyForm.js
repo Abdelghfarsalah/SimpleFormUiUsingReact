@@ -6,19 +6,17 @@ export default function MyForm() {
     const [showmodel, setshowmodel] = useState(false);
     const [forminputs, setforminputs] = useState({ name: "", age: null, phonenumber: "", areyouemployee: true, salaey: "less than 500$" });
     function HnadelEnableOrnotButton() {
-        if (forminputs.name !== "" && forminputs.age !== "" && forminputs.phonenumber != "") {
+        if (forminputs.name !== "" && forminputs.age !== "" && forminputs.phonenumber !== "") {
             return true;
         } else {
             return false;
         }
     }
-    function isNumber(str) {
-        return /^-?\d+(\.\d+)?$/.test(str);
-    }
+
     function displaycontent() {
         if (forminputs.age < 18 || forminputs.age > 1000) {
             return "Age munst be more than 18 and less than 100";
-        } else if (forminputs.phonenumber.length != 10) {
+        } else if (forminputs.phonenumber.length !== 10) {
             return "phone number must be valid"
         } else {
             return "The From has been submitted successfully "
